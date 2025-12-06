@@ -1,276 +1,310 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zorgvervoer Taxi – Betrouwbaar & Comfortabel</title>
-    <meta name="description" content="Professioneel zorgvervoer per taxi. Comfortabel vervoer voor medische afspraken en familiebezoeken of uitjes. Vaste prijs vooraf, geen verrassingen.">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxicare Zorgvervoer – veilig en persoonlijk vervoer op afspraak</title>
+  <meta name="description" content="Taxicare (Saf1 Taxi) biedt veilig en persoonlijk zorgvervoer voor mensen die slecht ter been zijn of afhankelijk zijn van een taxi. Voor ziekenhuis, therapie, familiebezoek en uitjes. Vaste prijs vooraf.">
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="topbar">
-        <div class="container topbar-inner">
-            <div class="logo">
-                <span class="logo-mark">Z</span>
-                <span class="logo-text">ZorgTaxi</span>
-            </div>
-            <nav class="nav">
-                <a href="#home">Home</a>
-                <a href="#tarieven">Tarieven</a>
-                <a href="#auto">Onze auto</a>
-                <a href="#boek">Boek een rit</a>
-                <a href="#contact">Contact</a>
-            </nav>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#home" class="brand">
+        <img src="taxicare-logo.png" alt="Taxicare logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">Taxicare</span>
+          <span class="brand-sub">Saf1 Taxi · Zorgvervoer</span>
         </div>
-    </header>
+      </a>
 
-    <main>
-        <!-- HERO -->
-        <section id="home" class="hero">
-            <div class="container hero-grid">
-                <div class="hero-text">
-                    <h1>Zorgvervoer per taxi – veilig & op tijd bij uw afspraak</h1>
-                    <p>
-                        Persoonlijk en betrouwbaar zorgvervoer voor ziekenhuisafspraken, een leuke uitje of familiebezoek.
-                        Vaste prijs vooraf, zodat u precies weet waar u aan toe bent.
-                    </p>
-                    <ul class="hero-bullets">
-                        <li>Specialistisch <strong>zorgvervoer</strong> (geen zakelijk vervoer)</li>
-                        <li>Comfortabele <strong>Mercedes C220 sedan – zwarte uitvoering</strong></li>
-                        <li><strong>Geen rolstoelvervoer</strong> (geen rolstoelbus beschikbaar)</li>
-                    </ul>
-                    <div class="hero-cta">
-                        <a href="#boek" class="btn btn-primary">Boek direct uw rit</a>
-                        <a href="#tarieven" class="btn btn-outline">Bekijk tarieven</a>
-                    </div>
-                    <p class="hero-note">
-                        Vaste prijs wordt altijd <strong>vooraf duidelijk besproken</strong>.
-                    </p>
-                </div>
-                <div class="hero-card">
-                    <h2>Snel een prijsindicatie</h2>
-                    <p>Vul de afstand in en zie direct een richtprijs. De definitieve prijs spreken we samen af.</p>
-                    <div class="inline-form">
-                        <label for="hero-distance">Afstand (km)</label>
-                        <input type="number" id="hero-distance" min="1" step="0.1" placeholder="Bijv. 18">
-                    </div>
-                    <div class="inline-form">
-                        <label for="hero-retour">
-                            <input type="checkbox" id="hero-retour">
-                            Retourrit
-                        </label>
-                    </div>
-                    <button id="hero-calc-btn" class="btn btn-primary btn-full">Bereken prijsindicatie</button>
-                    <p id="hero-result" class="price-result"></p>
-                    <p class="small-note">Let op: dit is een indicatie. De vaste prijs wordt altijd vooraf telefonisch of per bericht bevestigd.</p>
-                </div>
-            </div>
-        </section>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#zorgvervoer">Zorgvervoer</a>
+        <a href="#tarieven">Tarieven</a>
+        <a href="#over">Over ons</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-        <!-- TARIEVEN -->
-        <section id="tarieven" class="section">
-            <div class="container">
-                <h2>Tarieven zorgvervoer</h2>
-                <p class="section-intro">
-                    We werken met transparante kilometerprijzen. Geen verborgen kosten, geen verrassingen.
-                </p>
+      <div class="topbar-cta">
+        <a href="tel:0684675840" class="btn btn-ghost">Bel: 06 84675840</a>
+        <a href="#contact" class="btn btn-primary hide-on-mobile">Vraag rit aan</a>
+      </div>
+    </div>
+  </header>
 
-                <div class="pricing-grid">
-                    <div class="pricing-card">
-                        <h3>Tot en met 25 km</h3>
-                        <p class="price-highlight">€ 2,00 <span>/ km</span></p>
-                        <ul>
-                            <li>Ideaal voor lokale zorgafspraken</li>
-                            <li>Geschikt voor enkele rit of retour</li>
-                            <li>Heldere prijs vooraf besproken</li>
-                        </ul>
-                    </div>
-                    <div class="pricing-card featured">
-                        <h3>Vanaf 25 km</h3>
-                        <p class="price-highlight">€ 1,60 <span>/ km</span></p>
-                        <ul>
-                            <li>Geschikt voor langere afstanden</li>
-                            <li>Bijvoorbeeld voor een uitje of familiebezoek</li>
-                            <li>Vanaf 75 km: verlaagd tarief van <strong>€ 1,35 per km</strong></li>
-                        </ul>
-                    </div>
-                </div>
+  <main>
+    <!-- HERO -->
+    <section id="home" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Persoonlijk zorgvervoer voor mensen die slecht ter been zijn</h1>
+          <p>
+            Taxicare (onderdeel van Saf1 Taxi) is er speciaal voor mensen die <strong>slecht ter been zijn</strong>
+            of afhankelijk zijn van een taxi. Rustig, behulpzaam vervoer naar uw afspraak, familie of een uitje –
+            met een vaste prijs die we vooraf duidelijk met u afspreken.
+          </p>
 
-                <div class="pricing-note">
-                    <strong>Rekenvoorbeelden:</strong><br>
-                    Bij 20 km: 20 × € 2,00 = <strong>€ 40,00</strong><br>
-                    Bij 40 km: 40 × € 1,60 = <strong>€ 64,00</strong><br>
-                    Bij 75 km: 75 × € 1,35 = <strong>€ 101,25</strong>.
-                </div>
-            </div>
-        </section>
+          <ul class="hero-bullets">
+            <li>Voor mensen die <strong>moeilijk lopen</strong> of extra hulp nodig hebben</li>
+            <li>Ritten naar <strong>ziekenhuis, huisarts, therapie, dagbehandeling</strong></li>
+            <li>Ook voor <strong>familiebezoek, boodschappen of een uitje</strong></li>
+            <li><strong>Alleen zorgvervoer</strong> – geen zakelijk vervoer of luchthavenritten</li>
+            <li><strong>Geen rolstoelbus</strong> – opvouwbare rolstoelen in overleg wel mogelijk</li>
+          </ul>
 
-        <!-- AUTO -->
-        <section id="auto" class="section section-alt">
-            <div class="container two-col">
-                <div>
-                    <h2>Comfortabele Mercedes C220 – zwart</h2>
-                    <p>
-                        U reist in een nette, goed onderhouden <strong>Mercedes C220 sedan, zwarte uitvoering</strong>. 
-                        Rustig rijgedrag, extra aandacht bij in- en uitstappen en hulp met bagage behoren tot de service.
-                    </p>
-                    <ul class="checklist">
-                        <li>Comfortabele zitpositie</li>
-   
-                    <li>Airconditioning en nette uitstraling</li>
-                    </ul>
-                    <p class="warning-text">
-                        Let op: momenteel is er <strong>geen rolstoelbus beschikbaar</strong>.  
-                        Rolstoelen die opvouwbaar zijn en op de achterbank of in de kofferbak passen zijn in overleg mogelijk.
-                    </p>
-                </div>
-                <div class="info-panel">
-                    <h3>Waarvoor is ons zorgvervoer bedoeld?</h3>
-                    <ul>
-                        <li>Ziekenhuis- en poli-afspraken</li>
-                        <li>Huisarts en specialistische klinieken</li>
-                        <li>Fysiotherapie, revalidatie en dagbehandeling</li>
-                        <li>Bezoek aan zorginstellingen</li>
-                    </ul>
-                    <p class="small-note">
-                        We bieden <strong>geen zakelijk vervoer</strong> zoals directievervoer, luchthavenvervoer of zakelijke contracten.
-                    </p>
-                </div>
-            </div>
-        </section>
+          <div class="hero-actions">
+            <a href="tel:0684675840" class="btn btn-primary">Bel direct 06 84675840</a>
+            <a href="#contact" class="btn btn-outline">Vraag zorgvervoer aan</a>
+          </div>
 
-        <!-- BOEKING -->
-        <section id="boek" class="section">
-            <div class="container">
-                <h2>Boek uw zorgvervoer</h2>
-                <p class="section-intro">
-                    Vul onderstaand formulier in voor een vrijblijvende prijsindicatie en reservering.  
-                    U ontvangt altijd een bevestiging met de vaste ritprijs.
-                </p>
-
-                <div class="booking-layout">
-                    <form id="booking-form" class="booking-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="naam">Naam*</label>
-                                <input type="text" id="naam" name="naam" required placeholder="Uw volledige naam">
-                            </div>
-                            <div class="form-group">
-                                <label for="telefoon">Telefoonnummer*</label>
-                                <input type="tel" id="telefoon" name="telefoon" required placeholder="Bijv. 06-12345678">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">E-mail (optioneel)</label>
-                                <input type="email" id="email" name="email" placeholder="Bijv. uwnaam@example.nl">
-                            </div>
-                            <div class="form-group">
-                                <label for="datum">Datum rit*</label>
-                                <input type="date" id="datum" name="datum" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="tijd">Tijd rit*</label>
-                                <input type="time" id="tijd" name="tijd" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="opstap">Opstapadres*</label>
-                            <input type="text" id="opstap" name="opstap" required placeholder="Straat, huisnummer, plaats">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="bestemming">Bestemmingsadres*</label>
-                            <input type="text" id="bestemming" name="bestemming" required placeholder="Straat, huisnummer, plaats">
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="afstand">Geschatte afstand in km*</label>
-                                <input type="number" id="afstand" name="afstand" min="1" step="0.1" required placeholder="Bijv. 32">
-                            </div>
-                            <div class="form-group">
-                                <label for="rittype">Rittype*</label>
-                                <select id="rittype" name="rittype" required>
-                                    <option value="enkel">Enkele rit</option>
-                                    <option value="retour">Retour</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="opmerking">Opmerkingen (bijv. begeleiding, rollator, extra hulp)</label>
-                            <textarea id="opmerking" name="opmerking" rows="3" placeholder="Vul hier eventuele bijzonderheden in."></textarea>
-                        </div>
-
-                        <div class="form-actions">
-                            <button type="button" id="calc-btn" class="btn btn-secondary">Bereken prijsindicatie</button>
-                            <button type="submit" class="btn btn-primary">Verstuur boekingsaanvraag</button>
-                        </div>
-
-                        <p id="calc-result" class="price-result"></p>
-                        <p class="small-note">
-                            Dit formulier stuurt een boekingsaanvraag per e-mail. De rit is pas definitief na onze bevestiging
-                            met de vaste prijs.
-                        </p>
-                    </form>
-
-                    <aside class="contact-panel">
-                        <h3>Liever direct contact?</h3>
-                        <p>U kunt ook rechtstreeks contact opnemen voor een prijs en reservering.</p>
-                        <ul class="contact-list">
-                            <li><strong>Telefoon / WhatsApp:</strong> <span>+31 6 84675840</span></li>
-                            <li><strong>E-mail:</strong> <span>taxi-care@hotmail.com</span></li>
-                        </ul>
-                        <p class="small-note">
-                            Pas de telefoon- en e-mailgegevens hierboven aan naar je eigen gegevens.
-                        </p>
-                    </aside>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section section-alt">
-            <div class="container two-col">
-                <div>
-                    <h2>Contact & regio</h2>
-                    <p>
-                        We rijden in overleg ook vanuit een andere regio. Neem gerust contact met ons op om te bespreken
-                        of uw rit mogelijk is en welke prijs daarbij hoort.
-                    </p>
-                    <ul class="checklist">
-                        <li>Vaste prijs vooraf afgesproken</li>
-                        <li>Betaling contant of in overleg</li>
-                        <li>Rustige, behulpzame chauffeur</li>
-                    </ul>
-                </div>
-                <div class="info-panel">
-                    <h3>Contactgegevens</h3>
-                    <p><strong>Telefoon:</strong> +31 6 84675840</p>
-                    <p><strong>E-mail:</strong> taxi-care@hotmail.com</p>
-                    <p class="small-note">
-                        Vervang deze gegevens door je eigen telefoonnummer en e-mail.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-inner">
-            <p>© <span id="year"></span> ZorgTaxi – Zorgvervoer per Mercedes C220 sedan (geen rolstoelvervoer, geen zakelijk vervoer).</p>
-            <p class="footer-small">Tarieven: € 2,00 per km tot 25 km, vanaf 25 km € 1,60 per km, en vanaf 75 km € 1,35 per km. Vaste prijs vooraf duidelijk overeengekomen.</p>
+          <p class="hero-note">
+            We rijden uitsluitend op afspraak. Bel of stuur een bericht, dan kijken we samen wat het beste past.
+          </p>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="hero-card">
+          <h2>Snel een richtprijs voor uw rit</h2>
+          <p>Vul de afstand in en zie direct een prijsindicatie. De definitieve prijs spreken we altijd vooraf samen af.</p>
+
+          <label class="field">
+            <span>Afstand enkele rit (in km)</span>
+            <input type="number" id="calc-distance" min="1" step="0.1" placeholder="Bijvoorbeeld 18">
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" id="calc-retour">
+            <span>Retourrit</span>
+          </label>
+
+          <button id="calc-btn" class="btn btn-primary btn-full">Bereken prijsindicatie</button>
+          <p id="calc-result" class="price-result"></p>
+          <p class="small-note">
+            Dit is een indicatie. De vaste prijs spreken we altijd vooraf telefonisch of per bericht met u af.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZORGVERVOER UITLEG -->
+    <section id="zorgvervoer" class="section section-light">
+      <div class="container">
+        <h2>Voor wie is Taxicare zorgvervoer bedoeld?</h2>
+        <p class="section-intro">
+          Taxicare is er voor mensen die niet (meer) gemakkelijk zelfstandig kunnen reizen. Bijvoorbeeld doordat u
+          slecht ter been bent, herstellende bent van een operatie of simpelweg graag met extra aandacht en tijd
+          vervoerd wilt worden.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Medische afspraken</h3>
+            <p>
+              Vervoer naar ziekenhuis, poli, huisarts, specialistische kliniek, therapie of dagbehandeling.
+              We houden rekening met uw tempo en helpen waar nodig.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Familiebezoek & sociale afspraken</h3>
+            <p>
+              Ook voor verjaardagen, familiebezoek, bezoek aan zorginstelling of samen op bezoek bij vrienden
+              kunt u ons zorgvervoer inschakelen.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Uitjes & boodschappen</h3>
+            <p>
+              Even naar de stad, een klein uitje of boodschappen doen? In overleg kijken we graag wat mogelijk is
+              en welke tijden passen.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-banner">
+          <p>
+            <strong>Let op:</strong> we bieden <strong>geen zakelijk vervoer</strong> (geen directievervoer,
+            geen luchthavenvervoer, geen zakelijke contracten) en er is <strong>geen rolstoelbus</strong> aanwezig.
+            Opvouwbare rolstoelen kunnen in overleg mee in de kofferbak.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARIEVEN -->
+    <section id="tarieven" class="section">
+      <div class="container">
+        <h2>Tarieven zorgvervoer</h2>
+        <p class="section-intro">
+          We werken met duidelijke kilometerprijzen. U weet vooraf waar u aan toe bent – zonder verrassingen achteraf.
+        </p>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Korte ritten</h3>
+            <p class="price-highlight">€ 2,00 <span>/ km</span></p>
+            <p>Voor ritten tot en met 25 km (enkele rit).</p>
+            <ul>
+              <li>Ideaal voor lokale afspraken</li>
+              <li>Prijs altijd vooraf afgestemd</li>
+              <li>Mogelijkheid tot retour in overleg</li>
+            </ul>
+          </div>
+
+          <div class="pricing-card featured">
+            <h3>Langere afstanden</h3>
+            <p class="price-highlight">vanaf € 1,60 <span>/ km</span></p>
+            <p>Voor ritten vanaf 25 km (enkele rit).</p>
+            <ul>
+              <li>Geschikt voor verdere ziekenhuis- of familiebezoeken</li>
+              <li>Vanaf ca. 75 km <strong>maatwerk tarief</strong></li>
+              <li>Altijd vooraf duidelijke prijsafspraak</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pricing-note">
+          <strong>Voorbeelden:</strong><br>
+          Bij 20 km (enkele rit): 20 × € 2,00 = <strong>€ 40,00</strong><br>
+          Bij 40 km (enkele rit): 40 × € 1,60 = <strong>€ 64,00</strong><br>
+          Retourritten en langere afstanden gaan altijd in overleg en met vaste prijsafspraak.
+        </div>
+      </div>
+    </section>
+
+    <!-- OVER ONS -->
+    <section id="over" class="section section-light">
+      <div class="container two-col">
+        <div>
+          <h2>Over Taxicare – Saf1 Taxi</h2>
+          <p>
+            Taxicare is een initiatief van <strong>Saf1 Taxi</strong> en richt zich volledig op zorgvervoer. Geen
+            haast, geen druk, maar rustig en persoonlijk contact. We nemen de tijd om u veilig en comfortabel
+            naar uw bestemming te brengen.
+          </p>
+          <p>
+            U heeft tijdens de rit te maken met een vaste, rustige chauffeur. We helpen u bij het in- en uitstappen,
+            dragen waar mogelijk uw tas en zorgen dat u op tijd bij uw afspraak bent.
+          </p>
+          <ul class="checklist">
+            <li>Rustig rijgedrag en nette, verzorgde auto</li>
+            <li>Aandacht voor uw persoonlijke situatie</li>
+            <li>Alleen zorgvervoer – geen zakelijke ritten</li>
+          </ul>
+        </div>
+
+        <aside class="info-panel">
+          <h3>Bedrijfsgegevens</h3>
+          <p><strong>Bedrijfsnaam:</strong><br>Saf1 Taxi</p>
+          <p><strong>Handelsnaam zorgvervoer:</strong><br>Taxicare</p>
+          <p><strong>Telefoon:</strong><br>06 84675840</p>
+          <p><strong>E-mail:</strong><br>taxi-care@hotmail.com</p>
+          <p><strong>KvK-nummer:</strong><br>80056695</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CONTACT / AANVRAAG -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Vraag zorgvervoer aan</h2>
+        <p class="section-intro">
+          Vul uw gegevens in en omschrijf kort waarvoor u vervoer nodig heeft. We nemen zo snel mogelijk contact
+          met u op met een vaste prijs en bevestiging.
+        </p>
+
+        <div class="booking-layout">
+          <form id="booking-form" class="booking-form" onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="naam">Naam*</label>
+                <input type="text" id="naam" name="naam" required placeholder="Uw naam">
+              </div>
+              <div class="form-group">
+                <label for="telefoon">Telefoonnummer*</label>
+                <input type="tel" id="telefoon" name="telefoon" required placeholder="Bijv. 06 84675840">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="datum">Datum rit*</label>
+                <input type="date" id="datum" name="datum" required>
+              </div>
+              <div class="form-group">
+                <label for="tijd">Tijd rit*</label>
+                <input type="time" id="tijd" name="tijd" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="van">Opstapadres*</label>
+              <input type="text" id="van" name="van" required placeholder="Straat, huisnummer, plaats">
+            </div>
+
+            <div class="form-group">
+              <label for="naar">Bestemming*</label>
+              <input type="text" id="naar" name="naar" required placeholder="Straat, huisnummer, plaats">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="afstand-form">Geschatte afstand (km)</label>
+                <input type="number" id="afstand-form" name="afstand-form" min="1" step="0.1" placeholder="Bijvoorbeeld 18">
+              </div>
+              <div class="form-group">
+                <label for="rittype">Rittype</label>
+                <select id="rittype" name="rittype">
+                  <option value="enkel">Enkele rit</option>
+                  <option value="retour">Retour</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="opmerking">Situatie / bijzonderheden</label>
+              <textarea id="opmerking" name="opmerking" rows="3" placeholder="Bijvoorbeeld: slecht ter been, hulp nodig bij instappen, rollator, opvouwbare rolstoel, etc."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" id="prefill-whatsapp" class="btn btn-secondary">Maak bericht voor WhatsApp / e-mail</button>
+              <a id="whatsapp-link" class="btn btn-primary" href="#">Open WhatsApp met bericht</a>
+            </div>
+
+            <p class="small-note">
+              Dit formulier verstuurt geen e-mail vanaf de website, maar helpt u een compleet bericht te maken
+              voor WhatsApp of e-mail naar <strong>taxi-care@hotmail.com</strong> of <strong>06 84675840</strong>.
+            </p>
+          </form>
+
+          <aside class="contact-panel">
+            <h3>Direct contact</h3>
+            <p>U kunt ook direct bellen of een bericht sturen voor een prijs en reservering.</p>
+            <ul class="contact-list">
+              <li><strong>Telefoon / WhatsApp:</strong><br><a href="tel:0684675840">06 84675840</a></li>
+              <li><strong>E-mail:</strong><br><a href="mailto:taxi-care@hotmail.com">taxi-care@hotmail.com</a></li>
+            </ul>
+            <p class="small-note">
+              Spreekt u liever eerst iemand? Bel dan gerust, we denken graag met u mee.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Taxicare – zorgvervoer door Saf1 Taxi. Alleen zorgvervoer, geen zakelijk vervoer of luchthavenritten.</p>
+      <p class="footer-small">KvK: 80056695 · Tel: 06 84675840 · E-mail: taxi-care@hotmail.com</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
