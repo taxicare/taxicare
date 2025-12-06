@@ -1,128 +1,78 @@
-// Huidig jaar in de footer
-document.addEventListener("DOMContentLoaded", () => {
-    const yearEl = document.getElementById("year");
-    if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-    }
-});
-
-// Algemene prijsberekening
-function berekenPrijs(afstandKm, isRetour) {
-    const afstand = parseFloat(afstandKm);
-    if (isNaN(afstand) || afstand <= 0) {
-        return null;
-    }
-
-    let enkelPrijs;
-    if (afstand <= 25) {
-        enkelPrijs = afstand * 2.0;
-    } else {
-        const eersteDeel = 25 * 2.0;
-        const resterend = afstand - 25;
-        enkelPrijs = eersteDeel + resterend * 1.6;
-    }
-
-    let totaal = enkelPrijs;
-    if (isRetour) {
-        totaal = enkelPrijs * 2;
-    }
-
-    // Afronden op 2 decimalen
-    totaal = Math.round(totaal * 100) / 100;
-    return totaal;
+// Jaar in footer
+const yearSpan = document.getElementById('year');
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
 }
 
-// Hero calculator
-const heroBtn = document.getElementById("hero-calc-btn");
-if (heroBtn) {
-    heroBtn.addEventListener("click", () => {
-        const distanceInput = document.getElementById("hero-distance");
-        const retourCheckbox = document.getElementById("hero-retour");
-        const resultEl = document.getElementById("hero-result");
+// Eenvoudige prijsindicatie
+const distanceInput = document.getElementById('calc-distance');
+const retourCheckbox = document.getElementById('calc-retour');
+const calcBtn = document.getElementById('calc-btn');
+const calcResult = document.getElementById('calc-result');
 
-        const afstand = distanceInput.value;
-        const isRetour = retourCheckbox.checked;
+function calculatePrice() {
+  if (!distanceInput || !calcResult) return;
+  const d = parseFloat(distanceInput.value.replace(',', '.'));
+  if (isNaN(d) || d <= 0) {
+    calcResult.textContent = 'Vul een geldige afstand in.';
+    return;
+  }
 
-        const prijs = berekenPrijs(afstand, isRetour);
+  let distance = d;
+  if (retourCheckbox && retourCheckbox.checked) {
+    distance = d * 2;
+  }
 
-        if (!prijs) {
-            resultEl.textContent = "Voer een geldige afstand in (in kilometers).";
-            resultEl.style.color = "#fee2e2";
-            return;
-        }
+  let pricePerKm = 2.0;
+  if (distance > 25) pricePerKm = 1.6;
+  if (distance >= 75) pricePerKm = 1.35;
 
-        resultEl.style.color = "#facc15";
-        resultEl.textContent = `Indicatieve ritprijs: € ${prijs.toFixed(2).replace('.', ',')} (${isRetour ? "retour" : "enkele rit"}).`;
-    });
+  const indicatie = distance * pricePerKm;
+  calcResult.textContent = `Richtprijs: ongeveer € ${indicatie.toFixed(2).replace('.', ',')} (op basis van ${distance.toFixed(1).replace('.', ',')} km).`;
 }
-
-// Boekingformulier calculator + mailto
-const calcBtn = document.getElementById("calc-btn");
-const bookingForm = document.getElementById("booking-form");
 
 if (calcBtn) {
-    calcBtn.addEventListener("click", () => {
-        const afstandEl = document.getElementById("afstand");
-        const rittypeEl = document.getElementById("rittype");
-        const resultEl = document.getElementById("calc-result");
-
-        const afstand = afstandEl.value;
-        const isRetour = rittypeEl.value === "retour";
-
-        const prijs = berekenPrijs(afstand, isRetour);
-
-        if (!prijs) {
-            resultEl.textContent = "Voer een geldige afstand in (in kilometers).";
-            resultEl.style.color = "#b91c1c";
-            return;
-        }
-
-        resultEl.style.color = "#065f46";
-        resultEl.textContent = `Indicatieve ritprijs: € ${prijs.toFixed(2).replace('.', ',')} (${isRetour ? "retour" : "enkele rit"}). De definitieve vaste prijs ontvangt u in de bevestiging.`;
-    });
+  calcBtn.addEventListener('click', calculatePrice);
 }
 
-// Formulier versturen via mailto (werkt op GitHub Pages zonder backend)
-if (bookingForm) {
-    bookingForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+// WhatsApp / e-mail bericht genereren
+const prefillBtn = document.getElementById('prefill-whatsapp');
+const whatsappLink = document.getElementById('whatsapp-link');
 
-        const naam = document.getElementById("naam").value.trim();
-        const telefoon = document.getElementById("telefoon").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const datum = document.getElementById("datum").value;
-        const tijd = document.getElementById("tijd").value;
-        const opstap = document.getElementById("opstap").value.trim();
-        const bestemming = document.getElementById("bestemming").value.trim();
-        const afstand = document.getElementById("afstand").value;
-        const rittype = document.getElementById("rittype").value;
-        const opmerking = document.getElementById("opmerking").value.trim();
+function buildMessage() {
+  const naam = document.getElementById('naam')?.value || '';
+  const tel = document.getElementById('telefoon')?.value || '';
+  const datum = document.getElementById('datum')?.value || '';
+  const tijd = document.getElementById('tijd')?.value || '';
+  const van = document.getElementById('van')?.value || '';
+  const naar = document.getElementById('naar')?.value || '';
+  const afstand = document.getElementById('afstand-form')?.value || '';
+  const rittype = document.getElementById('rittype')?.value || '';
+  const opm = document.getElementById('opmerking')?.value || '';
 
-        const isRetour = rittype === "retour";
-        const prijs = berekenPrijs(afstand, isRetour);
+  let msg = 'Aanvraag zorgvervoer via Taxicare:%0A%0A';
+  if (naam) msg += `Naam: ${naam}%0A`;
+  if (tel) msg += `Telefoon: ${tel}%0A`;
+  if (datum) msg += `Datum rit: ${datum}%0A`;
+  if (tijd) msg += `Tijd rit: ${tijd}%0A`;
+  if (van) msg += `Opstapadres: ${van}%0A`;
+  if (naar) msg += `Bestemming: ${naar}%0A`;
+  if (afstand) msg += `Geschatte afstand: ${afstand} km%0A`;
+  if (rittype) msg += `Rittype: ${rittype}%0A`;
+  if (opm) msg += `%0ABijzonderheden:%0A${opm}%0A`;
 
-        // Bouw de e-mail
-        const ontvanger = "info@jouwzorgtaxi.nl"; // <-- HIER je eigen e-mailadres invullen
-        const onderwerp = encodeURIComponent("Nieuwe zorgtaxi boekingsaanvraag");
-        let body = `Nieuwe boekingsaanvraag zorgvervoer:%0D%0A%0D%0A`;
-        body += `Naam: ${naam}%0D%0A`;
-        body += `Telefoon: ${telefoon}%0D%0A`;
-        body += `E-mail: ${email || "-"}%0D%0A`;
-        body += `Datum rit: ${datum}%0D%0A`;
-        body += `Tijd rit: ${tijd}%0D%0A%0D%0A`;
-        body += `Opstapadres: ${opstap}%0D%0A`;
-        body += `Bestemmingsadres: ${bestemming}%0D%0A`;
-        body += `Geschatte afstand: ${afstand} km%0D%0A`;
-        body += `Rittype: ${rittype}%0D%0A`;
+  msg += '%0AAlvast bedankt.';
 
-        if (prijs) {
-            body += `%0D%0AIndicatieve prijs volgens tarief: € ${prijs.toFixed(2).replace('.', ',')}`;
-        }
+  return msg;
+}
 
-        body += `%0D%0A%0D%0AOpmerkingen / bijzonderheden:%0D%0A${opmerking || "-"}`;
-
-        const mailtoLink = `mailto:${ontvanger}?subject=${onderwerp}&body=${body}`;
-
-        window.location.href = mailtoLink;
-    });
+if (prefillBtn && whatsappLink) {
+  prefillBtn.addEventListener('click', () => {
+    const msg = buildMessage();
+    // NL nummer zonder 0
+    const phone = '31684675840';
+    const url = `https://wa.me/${phone}?text=${msg}`;
+    whatsappLink.href = url;
+    alert('Klik nu op "Open WhatsApp met bericht" om het bericht te versturen.');
+  });
 }
